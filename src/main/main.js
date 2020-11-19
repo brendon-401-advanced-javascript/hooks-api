@@ -2,15 +2,15 @@ import { Navbar } from 'react-bootstrap';
 import './main.scss';
 import React, { useState } from 'react'; 
 import Form from './form.js';
-import ToDoList from './list.js';
+// import ToDoList from './list.js';
 
 
 function Main(props) {
-    const [listItems, setListItems] = useState([]);
+    const [listItems] = useState([]);
 
     // function to be passed to form for the submit handle
-    function handleSubmit() {   
-    }
+    // function handleSubmit() {   
+    // }
 
     return (
     <div className='MainForm'>
