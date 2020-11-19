@@ -1,5 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 
 .Navbar {
-    background-color:#1E90FF ;
+    background-color:#1E90FF;
+    display: flex;
+    justify-content: space-between;
+    Button {
+        background:snow;
+    }
 }
