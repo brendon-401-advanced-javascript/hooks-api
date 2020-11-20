@@ -6,31 +6,39 @@ import Form from './form.js';
 
 
 function Main(props) {
-    const [listItems] = useState([]);
+    const [taskItems, setTaskItems] = useState(['Cowabunga']);
 
     // function to be passed to form for the submit handle
-    // function handleSubmit() {   
-    // }
+    function formSubmit(data){
+        setTaskItems(...taskItems, data);
+        console.log(taskItems);
+    };
+
+    // Const [count, setCount] = useState(7);
 
     return (
+    
     <div className='MainForm'>
         <Navbar className='Navbar' bg='dark' variant="dark">
-        <Navbar.Brand>To Do List Manager({listItems.length})</Navbar.Brand>
+        <Navbar.Brand>To Do List Manager({taskItems.length})</Navbar.Brand>
         </Navbar> 
 
-        <Form />
+        <Form formHandler={formSubmit} />
 
-        
         <ul>   
         {
-            listItems.map((item) =>  {
-                return <li>{item}</li>
-            })
+
+            console.log(taskItems)
+            // taskItems.map((item) =>  {
+            //     return <li>{item}</li>
+            // })
         }
+        
         </ul>
 
 
     </div>
+    
     )
 }
 
