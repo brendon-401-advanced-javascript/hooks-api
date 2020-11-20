@@ -2,19 +2,18 @@ import { Navbar } from 'react-bootstrap';
 import './main.scss';
 import React, { useState } from 'react'; 
 import Form from './form.js';
-// import ToDoList from './list.js';
+import ToDoList from './list.js';
 
 
 function Main(props) {
-    const [taskItems, setTaskItems] = useState(['Cowabunga']);
+    const [taskItems, setTaskItems] = useState([])
 
     // function to be passed to form for the submit handle
     function formSubmit(data){
-        setTaskItems(...taskItems, data);
-        console.log(taskItems);
+        console.log('data that we got from form', data);
+        setTaskItems([...taskItems, data]);
     };
 
-    // Const [count, setCount] = useState(7);
 
     return (
     
@@ -24,17 +23,7 @@ function Main(props) {
         </Navbar> 
 
         <Form formHandler={formSubmit} />
-
-        <ul>   
-        {
-
-            console.log(taskItems)
-            // taskItems.map((item) =>  {
-            //     return <li>{item}</li>
-            // })
-        }
-        
-        </ul>
+        <ToDoList taskList={taskItems}/>
 
 
     </div>
