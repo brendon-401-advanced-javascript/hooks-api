@@ -1,27 +1,15 @@
 import { Form, Button} from 'react-bootstrap';
 import './main.scss';
-import React, { useState } from 'react'; 
+import React from 'react'; 
+import useForm from '../hooks/form/formHook.js';
 
 
 function TodoForm(props) {
-    const [task, updateTasks] = useState({});
-
-    function handleTask(e) {
-        let taskUpdate = {
-            ...task, 
-            [e.target.name]: e.target.value,
-        };
-        updateTasks(taskUpdate);
-    }
+   
+    const [handleTask, onSubmit, task] = useForm();
+    console.log(task);
+    console.log(props);
     
-    console.log('state of the added item',task);
-
-    function onSubmit(e) {
-        e.preventDefault();
-        e.target.reset();
-        props.formHandler(task);
-        updateTasks({});
-    }
     return(
     <>
         <Form onSubmit={onSubmit}>
