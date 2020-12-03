@@ -4,19 +4,19 @@ import {useState} from 'react';
 const useForm = (callback) => {
     const [task, updateTasks] = useState({});
 
-    function handleTask(e) {
+    const handleTask = (e) => {
         let taskUpdate = {...task, [e.target.name]: e.target.value};
         updateTasks(taskUpdate);
     }
 
-    function onSubmit(e) {
+    const onSubmit = (e) => {
         e.preventDefault();
         callback && callback(task);
         e.target.reset();
         updateTasks({});
-        // console.log(task);
+        console.log(task);
     }
-    return [handleTask, onSubmit, task];
+    return [onSubmit, handleTask, task];
 }
 
 export default useForm; 

@@ -5,14 +5,18 @@ import Form from './form.js';
 import ToDoList from './list.js';
 
 
+
 function Main(props) {
     const [taskItems, setTaskItems] = useState([])
 
+    
     // function to be passed to form for the submit handle
     function formSubmit(data){
         console.log('data that we got from form', data);
         setTaskItems([...taskItems, data]);
     };
+
+    
 
 
     return (
