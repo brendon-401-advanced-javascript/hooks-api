@@ -1,27 +1,25 @@
 import { Form, Button} from 'react-bootstrap';
 import './main.scss';
-import React, { useState } from 'react'; 
+import React, {useState, useEffect} from 'react'; 
+import useForm from '../hooks/form/formHook.js';
+import axios from "axios";
+
+
 
 
 function TodoForm(props) {
-    const [task, updateTasks] = useState({});
-
-    function handleTask(e) {
-        let taskUpdate = {
-            ...task, 
-            [e.target.name]: e.target.value,
-        };
-        updateTasks(taskUpdate);
+   
+    const [onSubmit, handleTask, task] = useForm(doneWithForm);
+    
+    function doneWithForm(data) {
+        console.log(data.itemName);
+        axios.post('https://auth-app-bh.herokuapp.com/api/v1/todo', {    
+            "text": data.itemName,
+            "difficulty": data.difficulty   
+        });
     }
     
-    console.log('state of the added item',task);
-
-    function onSubmit(e) {
-        e.preventDefault();
-        e.target.reset();
-        props.formHandler(task);
-        updateTasks({});
-    }
+    
     return(
     <>
         <Form onSubmit={onSubmit}>
