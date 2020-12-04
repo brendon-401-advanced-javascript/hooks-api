@@ -2,7 +2,8 @@ import { Navbar } from 'react-bootstrap';
 import './main.scss';
 import React, { useState } from 'react'; 
 import Form from './form.js';
-import ToDoList from './list.js';
+// import ToDoList from './list.js';
+import Toasty from './list.js';
 
 
 
@@ -28,7 +29,7 @@ function Main(props) {
         </Navbar> 
         <div className='FormAndList'>
         <Form formHandler={formSubmit} />
-        <ToDoList className='TodoList' taskList={taskItems}/>
+        <Toasty className='TodoList' taskList={taskItems}/>
         </div>
 
 
