@@ -1,3 +1,17 @@
 .MainForm {
     margin:2% 5%;
 }
+
+.FormAndList {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+.toast {
+    max-width: 100%;
+    width:900px;
+}
+.form-group {
+    max-width:100%;
+    width:450px;
+}
