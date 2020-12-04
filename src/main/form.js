@@ -1,6 +1,6 @@
 import { Form, Button} from 'react-bootstrap';
 import './main.scss';
-import React, {useState, useEffect} from 'react'; 
+import {React} from 'react'; 
 import useForm from '../hooks/form/formHook.js';
 import axios from "axios";
 
@@ -9,7 +9,7 @@ import axios from "axios";
 
 function TodoForm(props) {
    
-    const [onSubmit, handleTask, task] = useForm(doneWithForm);
+    const [onSubmit, handleTask] = useForm(doneWithForm);
     
     function doneWithForm(data) {
         console.log(data.itemName);
