@@ -34,7 +34,7 @@ function Toasty(){
                                 <Toast.Header>
                                     <If condition={item.complete == true}>
                                         <Then>
-                                            <PillPill onClick={update} />    
+                                            <PillPill />    
                                         </Then>
                                         <Else>
 
