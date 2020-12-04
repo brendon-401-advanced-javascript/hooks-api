@@ -15,7 +15,8 @@ function TodoForm(props) {
         console.log(data.itemName);
         axios.post('https://auth-app-bh.herokuapp.com/api/v1/todo', {    
             "text": data.itemName,
-            "difficulty": data.difficulty   
+            "difficulty": data.difficulty,
+            "assassin": data.assignedTo
         });
     }
     
