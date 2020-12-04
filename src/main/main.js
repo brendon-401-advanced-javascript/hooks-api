@@ -6,6 +6,7 @@ import ToDoList from './list.js';
 
 
 
+
 function Main(props) {
     const [taskItems, setTaskItems] = useState([])
 
@@ -25,9 +26,10 @@ function Main(props) {
         <Navbar className='Navbar' bg='dark' variant="dark">
         <Navbar.Brand>To Do List Manager({taskItems.length})</Navbar.Brand>
         </Navbar> 
-
+        <div className='FormAndList'>
         <Form formHandler={formSubmit} />
-        <ToDoList taskList={taskItems}/>
+        <ToDoList className='TodoList' taskList={taskItems}/>
+        </div>
 
 
     </div>
